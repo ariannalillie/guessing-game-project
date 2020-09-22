@@ -14,7 +14,7 @@ const randomInRange = (min, max) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
-let checkGuess = (num) => {
+const checkGuess = (num) => {
   if (num > secretNumber) {
     console.log("Too high");
     return false;
@@ -27,7 +27,7 @@ let checkGuess = (num) => {
   }
 };
 
-let askGuess = () =>
+const askGuess = () =>
   rl.question("Enter a Guess, you have  " + numAttempts + " left ", (input) => {
     if (isNaN(Number(input))) {
       console.log("That's not a number!");
@@ -48,7 +48,7 @@ let askGuess = () =>
     }
   });
 
-let askRange = () =>
+const askRange = () =>
   rl.question("Enter a max number ", (input) => {
     if (isNaN(Number(input))) {
       console.log("That's not a number!");
@@ -68,7 +68,7 @@ let askRange = () =>
     });
   });
 
-let askTurnLimit = () =>
+const askTurnLimit = () =>
   rl.question("How many turns do you want? ", (input) => {
     if (isNaN(Number(input))) {
       console.log("That's not a number!");
