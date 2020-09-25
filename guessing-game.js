@@ -38,17 +38,15 @@ const askGuess = () =>
     if (!answer && numAttempts > 0) {
       askGuess();
     } else {
-      if (numAttempts === 0) {
+      if (!answer && numAttempts === 0) {
         rl.close();
-        console.log("No more turns! You lose!");
+        return console.log("No more turns! You lose!");
       } else {
         rl.close();
         console.log("You Win!");
       }
     }
   });
-// need to fix bug where if you guess right on last turn you get a you win
-// message and a you lose message.
 
 const askRange = () =>
   rl.question("Enter a max number ", (input) => {
@@ -66,6 +64,7 @@ const askRange = () =>
       let minNumber = input;
       console.log("*" + minNumber + "*");
       secretNumber = randomInRange(Number(minNumber), Number(maxNumber));
+      console.log(secretNumber);
       askGuess();
     });
   });
