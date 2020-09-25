@@ -21,10 +21,9 @@ const checkGuess = (num) => {
   } else if (num < secretNumber) {
     console.log("Too low");
     return false;
-  } else {
-    console.log("Correct!");
-    return true;
   }
+  console.log("Correct!");
+  return true;
 };
 
 const askGuess = () =>
@@ -38,7 +37,7 @@ const askGuess = () =>
     if (!answer && numAttempts > 0) {
       askGuess();
     } else {
-      if (numAttempts === 0) {
+      if (!answer && numAttempts === 0) {
         rl.close();
         console.log("No more turns! You lose!");
       } else {
@@ -52,19 +51,19 @@ const askRange = () =>
   rl.question("Enter a max number ", (input) => {
     if (isNaN(Number(input))) {
       console.log("That's not a number!");
-      return askRange();
+      askRange();
     }
     let maxNumber = input;
     console.log("*" + maxNumber + "*");
     rl.question("Enter a min number ", (input) => {
       if (isNaN(Number(input))) {
         console.log("That's not a number!");
-        return askRange();
+        askRange();
       }
       let minNumber = input;
       console.log("*" + minNumber + "*");
       secretNumber = randomInRange(Number(minNumber), Number(maxNumber));
-      return askGuess();
+      askGuess();
     });
   });
 
@@ -72,10 +71,10 @@ const askTurnLimit = () =>
   rl.question("How many turns do you want? ", (input) => {
     if (isNaN(Number(input))) {
       console.log("That's not a number!");
-      return askTurnLimit();
+      askTurnLimit();
     }
     numAttempts = input;
-    return askRange();
+    askRange();
   });
 
 askTurnLimit();
