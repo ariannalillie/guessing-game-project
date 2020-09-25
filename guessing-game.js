@@ -40,7 +40,7 @@ const askGuess = () =>
     } else {
       if (!answer && numAttempts === 0) {
         rl.close();
-        return console.log("No more turns! You lose!");
+        console.log("No more turns! You lose!");
       } else {
         rl.close();
         console.log("You Win!");
@@ -64,7 +64,6 @@ const askRange = () =>
       let minNumber = input;
       console.log("*" + minNumber + "*");
       secretNumber = randomInRange(Number(minNumber), Number(maxNumber));
-      console.log(secretNumber);
       askGuess();
     });
   });
