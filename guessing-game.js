@@ -28,12 +28,11 @@ const checkGuess = (num) => {
 
 const askGuess = () =>
   rl.question("Enter a Guess, you have  " + numAttempts + " left ", (input) => {
-    let userInput = Number(input);
-    if (isNaN(userInput)) {
+    if (isNaN(Number(input))) {
       console.log("That's not a number!");
-      askGuess();
+      return askGuess();
     }
-    let answer = checkGuess(userInput);
+    let answer = checkGuess(Number(input));
     numAttempts--;
     if (!answer && numAttempts > 0) {
       askGuess();
