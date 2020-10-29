@@ -1,18 +1,21 @@
 h1 {
     text-align: center;
     font-size: 60px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #306BAC;
-    text-shadow: 3px 1px 1px #141B41;
+    font-family: Amatic SC;
+    color: #485665;
+    text-shadow: 3px 1px 1px #1E3231;
 }
 
 body {
-    background-color: #98B9F2;
+    background-color: #F6C0D0;
 }
 
 h3 {
+    font-family: Amatic SC;
     text-align: center;
     font-size: 30px;
+    color: #485665;
+    background-color: #D0A5C0;
 }
 
 .user-input {
@@ -23,6 +26,12 @@ h3 {
 #container{width:100%;}
 #center{margin:0 auto;width:100px;}
 
-#min-num-label {
-    visibility: hidden;
+.user-choices {
+    font-family: Amatic SC;
+    font-size: 20px;
+    font-weight: bolder;
+    color: 1E3231;
+    text-align: center;
 }
+
+#display-text {margin:0 auto;width:100px;}
