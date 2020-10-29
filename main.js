@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const displayText = document.getElementById("display-text");
   const displayRange = document.getElementById("display-range");
   const displayTurnsLeft = document.getElementById("display-turns-left");
+  const minNumLabel = document.getElementById("min-num-label");
+  const maxNumLabel = document.getElementById("max-num-label");
   let secretNumber;
   let turnsLeft = 5;
 
@@ -31,6 +33,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     displayRange.innerHTML = `Min: ${minNum.value} Max:${maxNum.value}`;
     rangeSubmitButton.disabled = true;
     displayTurnsLeft.innerHTML = `Turns Left: ${turnsLeft}`;
+    maxNumLabel.classList.add.visibility = 'hidden';
+    minNumLabel.classList.add.visibility = 'hidden';
   });
 
   guessSubmitButton.addEventListener("click", (event) => {
